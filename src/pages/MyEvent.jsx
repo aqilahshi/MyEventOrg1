@@ -7,16 +7,15 @@ const MyEvent = () => {
     return (
         <div class="container2">
             <div  class="content">
-                <h1>MyEvent page</h1>
+                <h1>MyEvent</h1>
                 <div class="eventsummary">
                     <div>
                         <Collapsible label={<h3>{<RxTriangleDown/>} Ongoing Event</h3>}>
                             <div className='box_event'>
-                                <Box></Box>
-                                <Box></Box>
-                                <Box></Box>
-                                <Box></Box>
-                                <Box></Box>
+                                <Box label="b9.jpg" >CS Bersamamu</Box>
+                                <Box label="b9.jpg" >VCSIRF</Box>
+                                <Box label="b9.jpg" >CS Bersamamu Bersama-Sama</Box>
+                                <Box label="b9.jpg" >Freshmen Orientation</Box>
                             </div>
                             {/* <h2>Teheuhr</h2>
                             <p>dgfhgdsf</p> */}
@@ -24,11 +23,11 @@ const MyEvent = () => {
 
                         <Collapsible label={<h3>{<RxTriangleDown/>} Upcoming Event</h3>}>
                         <div className='box_event'>
-                                <Box></Box>
-                                <Box></Box>
-                                <Box></Box>
-                                <Box></Box>
-                                <Box></Box>
+                                <Box label="b9.jpg" >CS Bersamamu</Box>
+                                <Box label="4.jpg" >VCSIRF</Box>
+                                <Box label="aaa.jpeg" >C++ Clinic</Box>
+                                <Box label="b9.jpg" >Freshmen Orientation Bersama-Sama Pelajar Senior</Box>
+                                <Box label="b9.jpg" >CS Bersamamu Bersama-Sama</Box>
                             </div>
                             {/* <h2>Teheuhr</h2>
                             <p>dgfhgdsf</p> */}
@@ -36,11 +35,9 @@ const MyEvent = () => {
 
                         <Collapsible label={<h3>{<RxTriangleDown/>} Past Event</h3>}>
                         <div className='box_event'>
-                                <Box></Box>
-                                <Box></Box>
-                                <Box></Box>
-                                <Box></Box>
-                                <Box></Box>
+                                <Box label="b9.jpg" >VCSIRF</Box>
+                                <Box label="b9.jpg" >Freshmen Orientation</Box>
+                                <Box label="b9.jpg" >CS Bersamamu Bersama-Sama</Box>
                             </div>
                             {/* <h2>Teheuhr</h2>
                             <p>dgfhgdsf</p> */}
@@ -55,25 +52,3 @@ const MyEvent = () => {
 };
 
 export default MyEvent;
-
-// const [visible, setVisible] = useState(false)
-// return (
-//   <>
-//     <CButton href="#" onClick={(event) => {
-//       event.preventDefault()
-//       setVisible(!visible)
-//     }}>
-//       Link
-//     </CButton>
-//     <CButton onClick={() => setVisible(!visible)}>Button</CButton>
-//     <CCollapse visible={visible}>
-//       <CCard className="mt-3">
-//         <CCardBody>
-//           Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
-//           squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-//           sapiente ea proident.
-//         </CCardBody>
-//       </CCard>
-//     </CCollapse>
-//   </>
-// )
