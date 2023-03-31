@@ -1,0 +1,62 @@
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    font-family: BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-sans; 
+    /* font-size: 1.3rem; */
+}
+
+.container{
+    display:flex;
+}
+main{
+    width: 100%;
+    padding: 20px;
+}
+.sidebar{
+    /* background: #000; 
+    color: #fff;*/
+    background: #97DEFF;
+    color: black;
+    height: 100vh;
+    width: 200px;
+    transition: all 0.5s;
+}
+.top_section{
+    display: flex;
+    align-items:center;
+    padding:20px 15px;
+}
+.logo{
+    font-size: 22px;
+}
+.bars{
+    display: flex;
+    font-size: 25px;
+    margin-left: 50px;
+}
+.link{
+    display: flex;
+    /* color: #fff; */
+    color: black;
+    padding: 10px 15px;
+    gap: 15px;
+    transition: all 0.5s;
+}
+.link:hover{
+    /* background:lightskyblue; */
+    /* color: #000; */
+    background: #19A7CE;
+    color: white;
+    transition: all 0.5s;
+}
+.active{
+    /* background: lightskyblue; */
+    /* color: #000; */
+    color: white;
+    background: #146C94;
+}
+.icon, .link_text{
+    font-size: 20px;
+}

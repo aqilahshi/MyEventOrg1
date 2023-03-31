@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+}
+
+.topnav {
+    background: #79c4e7;
+    /* width:auto; */
+    padding: 10px 0px 7px 20px; 
+    /* top,  right, bottom, left*/
+    font-size: 12px;
+    margin: -20px 0px 15px 0px; 
+    font-size: 15px;
+  }
+
+  .RedoButton {
+    margin-left: 20px;
+  }
+
+  .searchbar {
+    margin-left:30%; 
+    width: 30%;
+    margin-top: -20px;
+    background: white;
+    font-style: italic;
+    color: #ccc;
+    padding-left: 15px;
+  }
+
+  .container2{
+    background-color: lightcyan;
+    margin:-20px -20px -20px -20px; 
+    height: 100dvh;
+    /* margin: 50px -20px -20px -20px;  */
+}
+
+.content {
+    padding: 0px 0px 0px 25px; 
+  }
+
+
+  .profile {
+    float: right;
+    margin-right: 20px; 
+  }
