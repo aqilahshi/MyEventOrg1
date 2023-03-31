@@ -1,6 +1,7 @@
 import React from 'react';
 import Collapsible from '../components/Collapsible';
 import { RxTriangleDown } from "react-icons/rx";
+import Box from '../components/Box';
 
 const MyEvent = () => {
     return (
@@ -10,18 +11,39 @@ const MyEvent = () => {
                 <div class="eventsummary">
                     <div>
                         <Collapsible label={<h3>{<RxTriangleDown/>} Ongoing Event</h3>}>
-                            <h2>Teheuhr</h2>
-                            <p>dgfhgdsf</p>
+                            <div className='box_event'>
+                                <Box></Box>
+                                <Box></Box>
+                                <Box></Box>
+                                <Box></Box>
+                                <Box></Box>
+                            </div>
+                            {/* <h2>Teheuhr</h2>
+                            <p>dgfhgdsf</p> */}
                         </Collapsible>
 
                         <Collapsible label={<h3>{<RxTriangleDown/>} Upcoming Event</h3>}>
-                            <h2>Teheuhr</h2>
-                            <p>dgfhgdsf</p>
+                        <div className='box_event'>
+                                <Box></Box>
+                                <Box></Box>
+                                <Box></Box>
+                                <Box></Box>
+                                <Box></Box>
+                            </div>
+                            {/* <h2>Teheuhr</h2>
+                            <p>dgfhgdsf</p> */}
                         </Collapsible>
-                        
+
                         <Collapsible label={<h3>{<RxTriangleDown/>} Past Event</h3>}>
-                            <h2>Teheuhr</h2>
-                            <p>dgfhgdsf</p>
+                        <div className='box_event'>
+                                <Box></Box>
+                                <Box></Box>
+                                <Box></Box>
+                                <Box></Box>
+                                <Box></Box>
+                            </div>
+                            {/* <h2>Teheuhr</h2>
+                            <p>dgfhgdsf</p> */}
                         </Collapsible>
                     </div>                    
                 </div>

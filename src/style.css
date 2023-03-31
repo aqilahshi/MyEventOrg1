@@ -60,7 +60,57 @@
 
 .eventbox {
   margin-left: 26px;
+  padding-bottom: 15px;
 }
+
+
+.box_event {
+  /* background: #79c4e7; */
+  margin-right: 50px;
+}
+
+.small_box {
+  margin-top: 15px;
+  /* background: black; */
+  border-color: #e8e5e5;
+  height: 180px;
+  width: 180px;
+  margin: 10px 20px 10px 0px;
+  display: inline-block;
+  border-style: solid;
+  border-radius: 5px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .collapsible .eventbox {
   transition: height ease 0.3s;

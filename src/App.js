@@ -12,7 +12,6 @@ import Files from './pages/Files.jsx';
 import Applications from './pages/Applications.jsx';
 import MyEvent from './pages/MyEvent.jsx';
 import Profile from './pages/Profile.jsx';
-import Collapsible from './components/Collapsible';
 
 const App = () => {
   return (
