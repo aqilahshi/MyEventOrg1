@@ -3,6 +3,7 @@ import Collapsible from '../components/Collapsible';
 import { RxTriangleDown } from "react-icons/rx";
 import Box from '../components/Box';
 
+
 const MyEvent = () => {
     return (
         <div class="container2">

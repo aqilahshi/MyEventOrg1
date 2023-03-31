@@ -1,5 +1,6 @@
 import React from "react";
 import { BiDotsHorizontal } from "react-icons/bi";
+import { Link } from 'react-router-dom';
 
 function Box(props) {
    
@@ -9,7 +10,7 @@ function Box(props) {
                 <a class="dot_menu" href="#"><BiDotsHorizontal/></a> 
                 <img class="image" src={props.label}></img>
                 <div class="eventnamebox">
-                    <a href="#" class="event_name">{props.children}</a>
+                    <Link to="/EventDashboard.jsx" class="event_name">{props.children}</Link>
                 </div>
             </div>
         </div>
