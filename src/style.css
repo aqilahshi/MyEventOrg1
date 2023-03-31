@@ -29,7 +29,8 @@
   }
 
   .container2{
-    background-color: lightcyan;
+    /* background-color: lightcyan; */
+    background-color: white;
     margin:-20px -20px -20px -20px; 
     height: 100dvh;
     /* margin: 50px -20px -20px -20px;  */

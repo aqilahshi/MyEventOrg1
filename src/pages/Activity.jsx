@@ -9,14 +9,8 @@ import {
 const Activity = () => {
     return (
         <div class="container2">
-            <div class="topnav">
-                <a href="#" ><FaArrowLeft/></a>
-                <a href="#" class="RedoButton"><FaArrowRight/></a>
-                <a href="#" class="profile"><FaUserAlt/></a>
-                <div class="searchbar">
-                    <p><FaSearch/>&ensp; Search</p>
-                </div>
-            </div><div class="content">
+           
+            <div class="content">
             <h1>Activity page</h1>
         </div></div>
     );

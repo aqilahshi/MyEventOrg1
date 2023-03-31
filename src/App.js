@@ -3,7 +3,6 @@ import './App.css';
 import './style.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-import Topbar from './components/Topbar';
 import Dashboard from './pages/Dashboard.jsx';
 import Activity from './pages/Activity.jsx';
 import Calls from './pages/Calls.jsx';
