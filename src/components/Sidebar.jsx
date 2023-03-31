@@ -6,7 +6,7 @@ import {
     FaPhoneAlt,
     FaCommentAlt,
     FaRegCalendarAlt,
-    FaThList,
+    // FaThList,
     FaFileAlt,
     FaBell,
     FaBox,
@@ -59,6 +59,11 @@ const Sidebar = ({children}) => {
             path:"/myevent",
             name:"MyEvent",
             icon:<FaSlideshare/>
+        },
+        {
+            path:"/profile",
+            name:"Profile",
+            icon:<FaUserAlt/>
         }
     ]
     return (
