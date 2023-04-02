@@ -47,7 +47,8 @@ main{
 .link:hover{
     /* background:lightskyblue; */
     /* color: #000; */
-    background: #19A7CE;
+    /* background: #19A7CE; */
+    background: #4285C2;
     color: white;
     transition: all 0.5s;
 }
@@ -55,7 +56,8 @@ main{
     /* background: lightskyblue; */
     /* color: #000; */
     color: white;
-    background: #146C94;
+    /* background: #146C94; */
+    background: #285176 ;
 }
 .icon, .link_text{
     font-size: 20px;
