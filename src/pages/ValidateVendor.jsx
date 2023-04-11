@@ -53,6 +53,7 @@ class ValidateVendor extends Component {
         }]  
       return (  
             <div>  
+                <h1>Registration Request</h1><br></br>
                 <ReactTable  
                     data={data}  
                     columns={columns}  

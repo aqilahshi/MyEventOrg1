@@ -40,6 +40,7 @@ import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
 import ValidateVendor from "./pages/ValidateVendor";
 import ApproveVendor from "./pages/ApproveVendor";
+import CreatePost from "./pages/CreatePost";
 
 
 const App = () => {
@@ -86,7 +87,7 @@ const App = () => {
           <Route path="/vendorlogin" element={<VendorLogin />} />
           <Route path='/product' element={<Product />} />
           <Route path='/productlist' element={<ProductList />} />
-          {/* add post */}
+          <Route path='/createpost' element={<CreatePost />} />
           {/* delete */}
           {/* edit */}
           <Route path='/validatevendor' element={<ValidateVendor />} />
