@@ -38,7 +38,8 @@ import VendorRegister from './pages/VendorRegister.jsx';
 import VendorLogin from './pages/VendorLogin.jsx';
 import Product from "./pages/Product";
 import ProductList from "./pages/ProductList";
-
+import ValidateVendor from "./pages/ValidateVendor";
+import ApproveVendor from "./pages/ApproveVendor";
 
 
 const App = () => {
@@ -88,7 +89,10 @@ const App = () => {
           {/* add post */}
           {/* delete */}
           {/* edit */}
-          {/*  */}
+          <Route path='/validatevendor' element={<ValidateVendor />} />
+          <Route path='/validatevendor/approvevendor' element={<ApproveVendor />} />
+          {/* categories?? */}
+          {/* admin dashboard */}
         </Routes>
       </Sidebar>
     </BrowserRouter>
