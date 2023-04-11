@@ -2,12 +2,17 @@ import React from 'react';
 import Collapsible from '../components/Collapsible';
 import { RxTriangleDown } from "react-icons/rx";
 import Box from '../components/Box';
+import Button from 'react-bootstrap/Button';
+import {Link} from 'react-router-dom';
 
 
 const MyEvent = () => {
     return (
         <div class="container2">
             <div  class="content">
+                <Link to='addevent'><Button variant="outline-primary" style={{marginRight:'50px', float:'right'}}>
+                    Add Event
+                </Button></Link>
                 <h1>MyEvent</h1>
                 <div class="eventsummary">
                     <div>
@@ -46,6 +51,7 @@ const MyEvent = () => {
                     </div>                    
                 </div>
             </div> 
+
         </div>
     );
 

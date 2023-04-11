@@ -21,19 +21,9 @@ const Sidebar = ({children}) => {
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
         {
-            path:"/",
-            name:"Dashboard",
-            icon:<FaTh/>
-        },
-        {
-            path:"/activity",
-            name:"Activity",
-            icon:<FaBell/>
-        },
-        {
-            path:"/calls",
-            name:"Calls",
-            icon:<FaPhoneAlt/>
+            path:"/myevent",
+            name:"MyEvent",
+            icon:<FaSlideshare/>
         },
         {
             path:"/chat",
@@ -41,25 +31,39 @@ const Sidebar = ({children}) => {
             icon:<FaCommentAlt/>
         },
         {
-            path:"/calendar",
-            name:"Calendar",
+            path:"/calendars",
+            name:"Calendars",
             icon:<FaRegCalendarAlt/>
         },
+
+        // {
+        //     path:"/",
+        //     name:"Dashboard",
+        //     icon:<FaTh/>
+        // },
         {
-            path:"/files",
-            name:"Files",
-            icon:<FaFileAlt/>
+            path:"/todo",
+            name:"To-do List",
+            icon:<FaPhoneAlt/>
         },
         {
-            path:"/applications",
-            name:"Applications",
+            path:"/shop",
+            name:"Shop",
             icon:<FaBox/>
         },
+        
         {
-            path:"/myevent",
-            name:"MyEvent",
-            icon:<FaSlideshare/>
+            path:"/activity",
+            name:"Activity",
+            icon:<FaBell/>
         },
+        
+        // {
+        //     path:"/files",
+        //     name:"Files",
+        //     icon:<FaFileAlt/>
+        // },
+        
         {
             path:"/profile",
             name:"Profile",
@@ -67,7 +71,7 @@ const Sidebar = ({children}) => {
         }
     ]
     return (
-        <div className="container">
+        <div className="container1">
            <div style={{width: isOpen ? "200px" : "50px"}} className="sidebar">
                <div className="top_section">
                    <h1 style={{display: isOpen ? "block" : "none"}} className="logo">MyEventOrg</h1>
