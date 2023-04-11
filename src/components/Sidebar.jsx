@@ -68,7 +68,35 @@ const Sidebar = ({children}) => {
             path:"/profile",
             name:"Profile",
             icon:<FaUserAlt/>
-        }
+        },
+
+        //Participants UI
+        {
+            path:"/attendance",
+            name:"Attendance",
+            icon:<FaTh/>
+        },
+        {
+            path:"/awardpage",
+            name:"Award Page",
+            icon:<FaBox/>
+        },
+        {
+            path:"/playlivepoll",
+            name:"Live Poll",
+            icon:<FaBox/>
+        },
+        //Event Committee UI
+        {
+            path:"/activity",
+            name:"Activity",
+            icon:<FaTh/>
+        },
+        {
+            path:"/award",
+            name:"Award",
+            icon:<FaBox/>
+        },
     ]
     return (
         <div className="container1">
