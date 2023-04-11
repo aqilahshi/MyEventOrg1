@@ -18,10 +18,10 @@ const MyEvent = () => {
                     <div>
                         <Collapsible label={<h3>{<RxTriangleDown/>} Ongoing Event</h3>}>
                             <div className='box_event'>
-                                <Box label="b9.jpg" >CS Bersamamu</Box>
-                                <Box label="b9.jpg" >VCSIRF</Box>
-                                <Box label="b9.jpg" >CS Bersamamu Bersama-Sama</Box>
-                                <Box label="b9.jpg" >Freshmen Orientation</Box>
+                                <Box label="b9.jpg" ><Link to='dashboard'>CS Bersamamu</Link></Box>
+                                <Box label="b9.jpg" ><Link to='dashboard'>VCSIRF</Link></Box>
+                                <Box label="b9.jpg" ><Link to='dashboard'>CS Bersamamu Bersama-Sama</Link></Box>
+                                <Box label="b9.jpg" ><Link to='dashboard'>Freshmen Orientation</Link></Box>
                             </div>
                             {/* <h2>Teheuhr</h2>
                             <p>dgfhgdsf</p> */}
@@ -29,11 +29,11 @@ const MyEvent = () => {
 
                         <Collapsible label={<h3>{<RxTriangleDown/>} Upcoming Event</h3>}>
                         <div className='box_event'>
-                                <Box label="b9.jpg" >CS Bersamamu</Box>
-                                <Box label="4.jpg" >VCSIRF</Box>
-                                <Box label="aaa.jpeg" >C++ Clinic</Box>
-                                <Box label="b9.jpg" >Freshmen Orientation Bersama-Sama Pelajar Senior</Box>
-                                <Box label="b9.jpg" >CS Bersamamu Bersama-Sama</Box>
+                                <Box label="b9.jpg" ><Link to='dashboard'>CS Bersamamu</Link></Box>
+                                <Box label="4.jpg" ><Link to='dashboard'>VCSIRF</Link></Box>
+                                <Box label="aaa.jpeg" ><Link to='dashboard'>C++ Clinic</Link></Box>
+                                <Box label="b9.jpg" ><Link to='dashboard'>Freshmen Orientation Bersama-Sama Pelajar Senior</Link></Box>
+                                <Box label="b9.jpg" ><Link to='dashboard'>CS Bersamamu Bersama-Sama</Link></Box>
                             </div>
                             {/* <h2>Teheuhr</h2>
                             <p>dgfhgdsf</p> */}
@@ -41,9 +41,9 @@ const MyEvent = () => {
 
                         <Collapsible label={<h3>{<RxTriangleDown/>} Past Event</h3>}>
                         <div className='box_event'>
-                                <Box label="b9.jpg" >VCSIRF</Box>
-                                <Box label="b9.jpg" >Freshmen Orientation</Box>
-                                <Box label="b9.jpg" >CS Bersamamu Bersama-Sama</Box>
+                                <Box label="b9.jpg" ><Link to='dashboard'>VCSIRF</Link></Box>
+                                <Box label="b9.jpg" ><Link to='dashboard'>Freshmen Orientation</Link></Box>
+                                <Box label="b9.jpg" ><Link to='dashboard'>CS Bersamamu Bersama-Sama</Link></Box>
                             </div>
                             {/* <h2>Teheuhr</h2>
                             <p>dgfhgdsf</p> */}

@@ -1,8 +1,6 @@
 import React from 'react';
-import Collapsible from '../components/Collapsible';
-import { RxTriangleDown } from "react-icons/rx";
-import Box from '../components/Box';
-
+import Dashboards from '../components/Dashboards';
+import {Link} from 'react-router-dom';
 
 const Dashboard = () => {
     return (
@@ -12,14 +10,15 @@ const Dashboard = () => {
                 <div class="eventsummary">
                     <div>
                         <div className='box_event'>
-                            <Box label="b9.jpg" >Generate Report</Box>
-                            <Box label="b9.jpg" >Event Agenda</Box>
-                            <Box label="b9.jpg" >Budget Plan</Box>
-                            <Box label="b9.jpg" >Participant</Box>
-                            <Box label="b9.jpg" >Award & Prizes</Box>
-                            <Box label="b9.jpg" >Generate Certificate</Box>
-                            <Box label="b9.jpg" >Organization Structure</Box>
-                            <Box label="b9.jpg" >Event Summary</Box>
+                            <Dashboards label="b9.jpg" ><Link to='eventsummary'>Event Details</Link></Dashboards>
+                            <Dashboards label="b9.jpg" ><Link to='organizationstructure'>Organization Structure</Link></Dashboards>
+                            <Dashboards label="b9.jpg" ><Link to='eventagenda'>Event Agenda</Link></Dashboards>
+                            <Dashboards label="b9.jpg" ><Link to='budgetplan'>Budget Plan</Link></Dashboards>
+                            <Dashboards label="b9.jpg" ><Link to='attendance'>Participant</Link></Dashboards>
+                            <Dashboards label="b9.jpg" ><Link to='activity'>Activity</Link></Dashboards>
+                            <Dashboards label="b9.jpg" ><Link to='award'>Award & Prizes</Link></Dashboards>
+                            <Dashboards label="b9.jpg" ><Link to='generatecertificate'>Certificate</Link></Dashboards>
+                            <Dashboards label="aaaa.jpeg" ><Link to='generatefinalreport'>Final Report</Link></Dashboards>
                         </div>
                     </div>                    
                 </div>
