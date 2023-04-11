@@ -21,6 +21,8 @@ function ApproveVendor() {
                 <p>Registration Status:</p><br></br>
             </div>
         </div>
+
+        
         <Form>
         <Form.Group className="mb-3">
             <Form.Label>Comment:</Form.Label>
@@ -39,6 +41,22 @@ function ApproveVendor() {
             Please insert a proper comment.
             </Form.Text>
         </Form.Group>
+
+        <p></p>
+        <Button variant="primary" type="submit">
+            Approve
+        </Button>
+        <Button variant="primary" type="submit">
+            Decline
+        </Button>
+        </Form>
+    </div>
+  );
+
+
+
+
+
 
         {/* <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Organization</Form.Label>
@@ -210,16 +228,7 @@ function ApproveVendor() {
             </Form.Text>
         </Form.Group> */}
 
-        <p></p>
-        <Button variant="primary" type="submit">
-            Approve
-        </Button>
-        <Button variant="primary" type="submit">
-            Decline
-        </Button>
-        </Form>
-    </div>
-  );
+        
 }
 
 export default ApproveVendor;
