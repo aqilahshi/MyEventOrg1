@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-import Dashboard from './pages/Dashboard.jsx';
 import Calls from './pages/Todo.jsx';
 import Chat from './pages/Chat.jsx';
 import Calendars from './pages/Calendars.jsx';
@@ -26,13 +25,21 @@ import CreateLD from './pages/CreateLD';
 import ResultLv from './participants/ResultLv';
 import PlayLv from './participants/PlayLv';
 
+import Dashboard from './pages/Dashboard.jsx';
+import EventSummary from './pages/EventSummary.jsx';
+import OrganizationStructure from './pages/OrganizationStructure.jsx';
+import EventAgenda from './pages/EventAgenda.jsx';
+import BudgetPlan from './pages/BudgetPlan.jsx';
+import GenerateCertificate from './pages/GenerateCertificate.jsx';
+import FinalReport from './pages/FinalReport.jsx';
+
+
 const App = () => {
   return (
     <BrowserRouter>
       <Sidebar>
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/" element={<MyEvent />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/calls" element={<Calls />} />
           <Route path="/calendars" element={<Calendars />} />
@@ -54,6 +61,17 @@ const App = () => {
           <Route path="/createluckydraw" element={<CreateLD />} />
           <Route path="/resultlivepoll" element={<ResultLv />} />
           <Route path="/playlivepoll" element={<PlayLv />} />
+
+          <Route path="/myevent/dashboard" element={<Dashboard />} />
+          <Route path="/myevent/dashboard/eventsummary" element={<EventSummary />} />
+          <Route path="/myevent/dashboard/organizationstructure" element={<OrganizationStructure />} />
+          <Route path="/myevent/dashboard/eventagenda" element={<EventAgenda />} />
+          <Route path="/myevent/dashboard/budgetplan" element={<BudgetPlan />} />
+          <Route path="/myevent/dashboard/attendance" element={<Attendance />} />
+          <Route path="/myevent/dashboard/activity" element={<Activity />} />
+          <Route path="/myevent/dashboard/award" element={<Award />} />
+          <Route path="/myevent/dashboard/generatecertificate" element={<GenerateCertificate />} />
+          <Route path="/myevent/dashboard/generatefinalreport" element={<FinalReport />} />
         </Routes>
       </Sidebar>
     </BrowserRouter>

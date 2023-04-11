@@ -7,10 +7,11 @@ import {
     FaCommentAlt,
     FaRegCalendarAlt,
     // FaThList,
-    FaFileAlt,
+    // FaFileAlt,
     FaBell,
     FaBox,
-    FaSlideshare
+    FaSlideshare,
+    FaShoppingBag
     
 }from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
@@ -49,7 +50,7 @@ const Sidebar = ({children}) => {
         {
             path:"/shop",
             name:"Shop",
-            icon:<FaBox/>
+            icon:<FaShoppingBag/>
         },
         
         {
