@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@fortawesome/fontawesome-free": "^6.4.0",
+    "@mui/icons-material": "^5.11.16",
     "bootstrap": "^5.2.3",
     "cra-template": "1.1.3",
     "date-fns": "^2.29.3",
@@ -19,7 +22,8 @@
     "react-scripts": "^5.0.0",
     "react-table": "^7.8.0",
     "reactstrap": "^9.1.9",
-    "sass": "^1.60.0"
+    "sass": "^1.60.0",
+    "styled-components": "^5.3.9"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -32,6 +32,13 @@ import EventAgenda from './pages/EventAgenda.jsx';
 import BudgetPlan from './pages/BudgetPlan.jsx';
 import GenerateCertificate from './pages/GenerateCertificate.jsx';
 import FinalReport from './pages/FinalReport.jsx';
+import Shop from './pages/Shop.jsx';
+import Cart from './pages/Cart.jsx';
+import VendorRegister from './pages/VendorRegister.jsx';
+import VendorLogin from './pages/VendorLogin.jsx';
+import Product from "./pages/Product";
+import ProductList from "./pages/ProductList";
+
 
 
 const App = () => {
@@ -72,6 +79,16 @@ const App = () => {
           <Route path="/myevent/dashboard/award" element={<Award />} />
           <Route path="/myevent/dashboard/generatecertificate" element={<GenerateCertificate />} />
           <Route path="/myevent/dashboard/generatefinalreport" element={<FinalReport />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/vendorregister" element={<VendorRegister />} />
+          <Route path="/vendorlogin" element={<VendorLogin />} />
+          <Route path='/product' element={<Product />} />
+          <Route path='/productlist' element={<ProductList />} />
+          {/* add post */}
+          {/* delete */}
+          {/* edit */}
+          {/*  */}
         </Routes>
       </Sidebar>
     </BrowserRouter>
