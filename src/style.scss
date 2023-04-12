@@ -77,6 +77,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    // padding-bottom: 50px;
   
     .container11 {
       border: 1px solid white;
@@ -90,6 +91,7 @@
         flex: 1;
         background-color: #1C3750;
         position: relative;
+        max-height: 85vh;
   
         .navbar {
           display: flex;
@@ -211,6 +213,7 @@
           padding: 10px;
           height: calc(100% - 160px);
           overflow: scroll;
+          max-height: 80vh;
   
           .message {
             display: flex;
