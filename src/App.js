@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './style.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Calls from './pages/Todo.jsx';
@@ -71,7 +72,6 @@ const App = () => {
           <Route path="/createluckydraw" element={<CreateLD />} />
           <Route path="/resultlivepoll" element={<ResultLv />} />
           <Route path="/playlivepoll" element={<PlayLv />} />
-<<<<<<< Updated upstream
 
           <Route path="/myevent/dashboard" element={<Dashboard />} />
           <Route path="/myevent/dashboard/eventsummary" element={<EventSummary />} />
@@ -96,9 +96,7 @@ const App = () => {
           <Route path='/validatevendor/approvevendor' element={<ApproveVendor />} />
           {/* categories?? */}
           {/* admin dashboard */}
-=======
           <Route path="/luckydraw" element={<LuckyDrawAlgo />} />          
->>>>>>> Stashed changes
         </Routes>
       </Sidebar>
     </BrowserRouter>
