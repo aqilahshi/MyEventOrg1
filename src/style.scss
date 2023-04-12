@@ -73,12 +73,12 @@
 
   .home {
     background-color: white;
-    height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
   
-    .container {
+    .container11 {
       border: 1px solid white;
       border-radius: 10px;
       width: 65%;
@@ -95,7 +95,7 @@
           display: flex;
           align-items: center;
           background-color: #285176;
-          height: 50px;
+          height: 100%;
           padding: 10px;
           justify-content: space-between;
           color: #ddddf7;
@@ -183,7 +183,7 @@
         flex: 2;
   
         .chatInfo {
-          height: 50px;
+          height: 45px;
           background-color: #4285C2;
           display: flex;
           align-items: center;
