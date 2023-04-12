@@ -24,6 +24,7 @@ import DetailsQuizFake from './pages/DetailsQuizFake';
 import CreateLD from './pages/CreateLD';
 import ResultLv from './participants/ResultLv';
 import PlayLv from './participants/PlayLv';
+import LuckyDrawAlgo from './participants/LuckyDrawAlgo';
 
 import Dashboard from './pages/Dashboard.jsx';
 import EventSummary from './pages/EventSummary.jsx';
@@ -70,6 +71,7 @@ const App = () => {
           <Route path="/createluckydraw" element={<CreateLD />} />
           <Route path="/resultlivepoll" element={<ResultLv />} />
           <Route path="/playlivepoll" element={<PlayLv />} />
+<<<<<<< Updated upstream
 
           <Route path="/myevent/dashboard" element={<Dashboard />} />
           <Route path="/myevent/dashboard/eventsummary" element={<EventSummary />} />
@@ -94,6 +96,9 @@ const App = () => {
           <Route path='/validatevendor/approvevendor' element={<ApproveVendor />} />
           {/* categories?? */}
           {/* admin dashboard */}
+=======
+          <Route path="/luckydraw" element={<LuckyDrawAlgo />} />          
+>>>>>>> Stashed changes
         </Routes>
       </Sidebar>
     </BrowserRouter>

@@ -87,6 +87,11 @@ const Sidebar = ({children}) => {
             name:"Live Poll",
             icon:<FaBox/>
         },
+        {
+            path:"/luckydraw",
+            name:"LuckyDraw",
+            icon:<FaBox/>
+        },
         //Event Committee UI
         {
             path:"/activity",
@@ -98,6 +103,7 @@ const Sidebar = ({children}) => {
             name:"Award",
             icon:<FaBox/>
         },
+        
     ]
     return (
         <div className="container1">
