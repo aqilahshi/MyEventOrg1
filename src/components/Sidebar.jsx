@@ -27,7 +27,7 @@ const Sidebar = ({children}) => {
             icon:<FaSlideshare/>
         },
         {
-            path:"/chat",
+            path:"/comm",
             name:"Chat",
             icon:<FaCommentAlt/>
         },
