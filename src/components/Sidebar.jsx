@@ -58,6 +58,11 @@ const Sidebar = ({children}) => {
             name:"Activity",
             icon:<FaBell/>
         },
+        {
+            path:"/award",
+            name:"Award",
+            icon:<FaBox/>
+        },
         
         // {
         //     path:"/files",
@@ -91,18 +96,7 @@ const Sidebar = ({children}) => {
             path:"/luckydraw",
             name:"LuckyDraw",
             icon:<FaBox/>
-        },
-        //Event Committee UI
-        {
-            path:"/activity",
-            name:"Activity",
-            icon:<FaTh/>
-        },
-        {
-            path:"/award",
-            name:"Award",
-            icon:<FaBox/>
-        },
+        }
         
     ]
     return (
