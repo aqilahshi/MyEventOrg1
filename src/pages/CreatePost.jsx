@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {Row, Col} from 'react-bootstrap';
-import { useState } from "react";
+import { useState, useEffect  } from "react";
 import {db} from '../firebase';
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs  } from "firebase/firestore";
 
     
 function  CreatePost() {
@@ -41,6 +41,25 @@ function  CreatePost() {
       }
 }
 
+
+
+const [todos, setTodos] = useState([])
+ 
+const fetchPost = async () => {
+       
+  await getDocs(collection(db, "product"))
+      .then((querySnapshot)=>{              
+          const newData = querySnapshot.docs
+              .map((doc) => ({...doc.data(), id:doc.id }));
+          setTodos(newData);                
+          console.log(todos, newData);
+      })
+ 
+}
+
+useEffect(()=>{
+  fetchPost();
+}, [])
 
 
   const onOptionChange = e => {
@@ -167,8 +186,8 @@ function  CreatePost() {
                   <Form.Select aria-label="Default select example"
                   onChange={(y)=>setProductType(y.target.value)}>
                       <option>--Select Item Type--</option>
-                      <option value="1">F&B</option>
-                      <option value="2">Doorgift</option>
+                      <option value="F&B">F&B</option>
+                      <option value="Doorgift">Doorgift</option>
                       <option value="3">3</option>
                       <option value="4">4</option>
                   </Form.Select>
@@ -247,7 +266,7 @@ function  CreatePost() {
                 </Form>
             </div>
 
-      <div className='try4'>
+        <div className='try4'>
           <div className='try2'>
             <h5>Product Status</h5><p/>
             Status:
@@ -367,8 +386,17 @@ function  CreatePost() {
           </div>
 
         </div>
-
+<div className="todo-content">
+    {
+        todos?.map((todo,i)=>(
+            <p key={i}>
+                {todo.todo}
+            </p>
+        ))
+    }
+</div>
       </div>
+      
       {/* end create post */}
     </div> 
   );

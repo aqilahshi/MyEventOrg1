@@ -43,7 +43,7 @@ import ProductList from "./pages/ProductList";
 import ValidateVendor from "./pages/ValidateVendor";
 import ApproveVendor from "./pages/ApproveVendor";
 import CreatePost from "./pages/CreatePost";
-import Aaaa from "./pages/Aaaa";
+import ViewFeed from "./pages/ViewFeed";
 
 // const App = () => {
 //   return (
@@ -194,7 +194,7 @@ function App() {
           {/* edit */}
           <Route path='/validatevendor' element={<ValidateVendor />} />
           <Route path='/validatevendor/approvevendor' element={<ApproveVendor />} />
-          <Route path='/aaaa' element={<Aaaa />} />
+          <Route path='/viewfeed' element={<ViewFeed />} />
          
           {/* categories?? */}
           {/* admin dashboard */}
