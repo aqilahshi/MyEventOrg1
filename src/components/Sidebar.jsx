@@ -11,10 +11,15 @@ import {
     FaBell,
     FaBox,
     FaSlideshare,
-    FaShoppingBag
+    FaShoppingBag,
+    FaPoll,
+    FaAtom,
+    FaAward
     
 }from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
+import MainPage from '../pages/MainPage';
+import { RxActivityLog } from 'react-icons/rx';
 
 
 const Sidebar = ({children}) => {
@@ -56,13 +61,13 @@ const Sidebar = ({children}) => {
         {
             path:"/activity",
             name:"Activity",
-            icon:<FaBell/>
+            icon:<RxActivityLog/>
         },
-        {
-            path:"/award",
-            name:"Award",
-            icon:<FaBox/>
-        },
+        // {
+        //     path:"/award",
+        //     name:"Award",
+        //     icon:<FaBox/>
+        // },
         
         // {
         //     path:"/files",
@@ -85,23 +90,23 @@ const Sidebar = ({children}) => {
         {
             path:"/playlivepoll",
             name:"Live Poll",
-            icon:<FaBox/>
+            icon:<FaPoll/>
         },
         {
             path:"/luckydraw",
             name:"LuckyDraw",
-            icon:<FaBox/>
+            icon:<FaAtom/>
         }, 
         {
             path:"/awardpage",
             name:"Award Page",
-            icon:<FaBox/>
+            icon:<FaAward/>
         },
-        {
-            path:"/extractattendance",
-            name:"Attendance",
-            icon:<FaBox/>
-        },         
+        // {
+        //     path:"/homepage",
+        //     name:"Home Page",
+        //     icon:<MainPage/>
+        // },         
     ]
     return (
         <div className="container1">
