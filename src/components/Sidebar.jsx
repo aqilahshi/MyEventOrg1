@@ -83,11 +83,6 @@ const Sidebar = ({children}) => {
             icon:<FaTh/>
         },
         {
-            path:"/awardpage",
-            name:"Award Page",
-            icon:<FaBox/>
-        },
-        {
             path:"/playlivepoll",
             name:"Live Poll",
             icon:<FaBox/>
@@ -96,8 +91,17 @@ const Sidebar = ({children}) => {
             path:"/luckydraw",
             name:"LuckyDraw",
             icon:<FaBox/>
-        }
-        
+        }, 
+        {
+            path:"/awardpage",
+            name:"Award Page",
+            icon:<FaBox/>
+        },
+        {
+            path:"/extractattendance",
+            name:"Attendance",
+            icon:<FaBox/>
+        },         
     ]
     return (
         <div className="container1">
