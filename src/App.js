@@ -120,6 +120,7 @@ import { Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
 import Extractattendance from './pages/Extractattendance';
+import MainPage from './pages/MainPage';
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -174,7 +175,7 @@ function App() {
           <Route path="/playlivepoll" element={<PlayLv />} />
           <Route path="/luckydraw" element={<LuckyDrawAlgo />} />          
           <Route path="/extractattendance" element={<Extractattendance />} />          
-          
+          <Route path="/homepage" element={<MainPage />} />  
 
           {/* start kirah part */}
           <Route path="/myevent/dashboard" element={<Dashboard />} />
