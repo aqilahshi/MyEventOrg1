@@ -3,15 +3,62 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {Row, Col} from 'react-bootstrap';
-import { useState } from "react"
+import { useState } from "react";
+import {db} from '../firebase';
+import { collection, addDoc } from "firebase/firestore";
+
     
 function  CreatePost() {
 
-  const [topping, setTopping] = useState("Medium")
+  const [Status, setStatus] = useState("Enabled")
+  const [Visibility, setVisibility] = useState("Visible")
+  const [MStock, setMStock] = useState("Yes")
+  const [SAvailability, setSAvailability] = useState("Yes")
+   
+  const [productname, setProductName] = useState("")
+  const [productdesc, setProductDesc] = useState("")
+  const [productprice, setProductPrice] = useState("")
+  const [producttype, setProductType] = useState("")
+  const [productvar, setProductVar] = useState("")
+  const [productquantity, setProductQuantity] = useState("")
   
+
+  const Submit = async (y) => {
+    y.preventDefault();  
+   
+    try {
+        const docRef = await addDoc(collection(db, "product"), {
+          productname: productname,
+          productdesc: productdesc,
+          productprice: productprice,
+          producttype: producttype,
+          productvar: productvar,
+          productquantity: productquantity,    
+        });
+        console.log("Document written with ID: ", docRef.id);
+      } catch (y) {
+        console.error("Error adding document: ", y);
+      }
+}
+
+
+
   const onOptionChange = e => {
-    setTopping(e.target.value)
+    setStatus(e.target.value)
   }
+
+  const onOptionChange2 = f => {
+    setVisibility(f.target.value)
+  }
+
+  const onOptionChange3 = g => {
+    setMStock(g.target.value)
+  }
+
+  const onOptionChange4 = h => {
+    setSAvailability(h.target.value)
+  }
+
 
   return (
     <div className='createpost'>
@@ -27,6 +74,7 @@ function  CreatePost() {
                     type="text"
                     placeholder="Insert your product name"
                     aria-describedby="inputGroupPrepend"
+                    onChange={(y)=>setProductName(y.target.value)}
                     required
                   />
                   <Form.Control.Feedback type="invalid">
@@ -45,6 +93,7 @@ function  CreatePost() {
                     type="text"
                     placeholder="Insert your product description"
                     aria-describedby="inputGroupPrepend"
+                    onChange={(y)=>setProductDesc(y.target.value)}
                     required
                   />
                   <Form.Control.Feedback type="invalid">
@@ -99,6 +148,7 @@ function  CreatePost() {
                     type="text"
                     placeholder="Insert your product name"
                     aria-describedby="inputGroupPrepend"
+                    onChange={(y)=>setProductPrice(y.target.value)}
                     required
                   />
                   <Form.Control.Feedback type="invalid">
@@ -114,7 +164,8 @@ function  CreatePost() {
 
               <Form.Group className="mb-3">
                   <Form.Label>Item Type</Form.Label>
-                  <Form.Select aria-label="Default select example">
+                  <Form.Select aria-label="Default select example"
+                  onChange={(y)=>setProductType(y.target.value)}>
                       <option>--Select Item Type--</option>
                       <option value="1">F&B</option>
                       <option value="2">Doorgift</option>
@@ -134,6 +185,7 @@ function  CreatePost() {
                               type="text"
                               placeholder="Insert variations"
                               aria-describedby="inputGroupPrepend"
+                              onChange={(y)=>setProductVar(y.target.value)}
                               required
                             />
                             <Form.Control.Feedback type="invalid">
@@ -153,6 +205,7 @@ function  CreatePost() {
                               type="text"
                               placeholder="Insert quantity"
                               aria-describedby="inputGroupPrepend"
+                              onChange={(y)=>setProductQuantity(y.target.value)}
                               required
                             />
                             <Form.Control.Feedback type="invalid">
@@ -186,7 +239,9 @@ function  CreatePost() {
                   </Row>
                 </div>
                 <p></p>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" 
+                type="submit" 
+                onClick={Submit}>
                     Submit
                 </Button>
                 </Form>
@@ -197,42 +252,46 @@ function  CreatePost() {
             <h5>Product Status</h5><p/>
             Status:
             <br/><input
-        type="radio"
-        name="topping"
-        value="Regular"
-        id="regular"
-        checked={topping === "Regular"}
-        onChange={onOptionChange}
-      />
-      <label htmlFor="regular">Regular</label>
+              type="radio" name="Status"
+              value="Enabled" id="enabled"
+              checked={Status === "Enabled"}
+              onChange={onOptionChange}
+            />
+            <label htmlFor="enabled">Enable</label>
 
-      <br/><input
-        type="radio"
-        name="topping"
-        value="Medium"
-        id="medium"
-        checked={topping === "Medium"}
-        onChange={onOptionChange}
-      />
-      <label htmlFor="medium">Medium</label>
+            <br/><input
+              type="radio" name="Status"
+              value="Disabled" id="disabled"
+              checked={Status === "Disabled"}
+              onChange={onOptionChange}
+            />
+            <label htmlFor="disabled">Disabled</label>
 
-      <br/><input
-        type="radio"
-        name="topping"
-        value="Large"
-        id="large"
-        checked={topping === "Large"}
-        onChange={onOptionChange}
-      />
-      <label htmlFor="large">Large</label>
-
-      <p>
-        Select topping : <strong>{topping}</strong>
-      </p>
+            {/* <p>
+              Select status : <strong>{Status}</strong>
+            </p> */}
 
             <br/>
              Visibility:
-            
+             <br/><input
+              type="radio" name="Visibility"
+              value="Visible" id="visible"
+              checked={Visibility === "Visible"}
+              onChange={onOptionChange2}
+            />
+            <label htmlFor="visible">Visible</label>
+
+            <br/><input
+              type="radio" name="Visibility"
+              value="Not visible" id="notvisible"
+              checked={Visibility === "Not visible"}
+              onChange={onOptionChange2}
+            />
+            <label htmlFor="notvisible">Not visible</label>
+
+            {/* <p>
+              Select visibility : <strong>{Visibility}</strong>
+            </p> */}
           </div>
           
           <br/>
@@ -240,10 +299,48 @@ function  CreatePost() {
           <div className='try2'>
               <h5>Inventory</h5><p/>
               Manage Stock:
-            
+              <br/><input
+              type="radio" name="MStock"
+              value="Yes" id="yes"
+              checked={MStock === "Yes"}
+              onChange={onOptionChange3}
+            />
+            <label htmlFor="yes">Yes</label>
+
+            <br/><input
+              type="radio" name="MStock"
+              value="No" id="no"
+              checked={MStock === "No"}
+              onChange={onOptionChange3}
+            />
+            <label htmlFor="no">No</label>
+
+            {/* <p>
+              Select Manage Stock : <strong>{MStock}</strong>
+            </p> */}
             <br/>
+
              Stock Availability:
-           
+             <br/><input
+              type="radio" name="SAvailability"
+              value="Yes" id="yes"
+              checked={SAvailability === "Yes"}
+              onChange={onOptionChange4}
+            />
+            <label htmlFor="yes">Yes</label>
+
+            <br/><input
+              type="radio" name="SAvailability"
+              value="No" id="no"
+              checked={SAvailability === "No"}
+              onChange={onOptionChange4}
+            />
+            <label htmlFor="no">No</label>
+
+            {/* <p>
+              Select Stock Availability : <strong>{SAvailability}</strong>
+            </p> */}
+            <br/>
           </div>
 
           <br/>
