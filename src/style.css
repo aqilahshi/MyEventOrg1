@@ -127,9 +127,40 @@
 }
 
 
+/* .createpost {
+  background-color: #bbeae2;
+} */
 
 
+.try1 {
+  /* background-color: #285176; */
+  border-style: groove;
+  border-radius: 10px;
+  max-width: 60%;
+  padding: 20px;
+}
 
+.try2 {
+  /* background-color: #79c4e7; */
+  border-style: groove;
+  border-radius: 10px;
+  /* width: 40%; */
+  /* max-width: auto; */
+  padding: 20px;
+  /* margin-left: 20px; */
+}
+
+.try3 {
+  display: flex;
+}
+
+
+.try4 {
+  /* background-color: bisque; */
+  width: 40%;
+  max-width: auto;
+  margin-left: 20px;
+}
 
 
 
