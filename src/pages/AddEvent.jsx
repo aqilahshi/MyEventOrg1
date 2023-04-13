@@ -9,7 +9,7 @@ import React, { useState, useEffect } from 'react';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { setDate } from 'date-fns';
 
-const AddEvent = () =>{
+function AddEvent() {
   const [name, setName] = useState("");
   const [organization, setOrganization] = useState("");
   const [details, setDetails] = useState("");
@@ -20,6 +20,7 @@ const AddEvent = () =>{
   const [registrationLink, setRegistration] = useState("");
 
   const createEvent = async (e) =>{
+    e.preventDefault();
     try {
       const docRef = await addDoc(collection(db, "addevents"), {
         name: name, 
