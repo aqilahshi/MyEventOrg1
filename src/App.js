@@ -203,14 +203,11 @@ function App() {
           <Route path="/myevent/dashboard/eventagenda/editeventagenda/eventagenda" element={<EventAgenda />} />
           
           <Route path="/myevent/dashboard/budgetplan" element={<BudgetPlan />} />
-<<<<<<< HEAD
           <Route path="/myevent/dashboard/budgetplan/editBudgetplan" element={<EditBudgetPlan />} />
           <Route path="/myevent/dashboard/budgetplan/editBudgetplan/budgetplan" element={<BudgetPlan />} />
           
           <Route path="/myevent/dashboard/attendance" element={<Attendance />} />
-=======
           <Route path="/myevent/dashboard/extractattendance" element={<Extractattendance />} />
->>>>>>> main
           <Route path="/myevent/dashboard/activity" element={<Activity />} />
           <Route path="/myevent/dashboard/award" element={<Award />} />
           <Route path="/myevent/dashboard/generatecertificate" element={<GenerateCertificate />} />
