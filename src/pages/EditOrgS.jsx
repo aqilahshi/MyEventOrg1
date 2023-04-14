@@ -5,7 +5,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import {Link} from 'react-router-dom';
 
 
-class OrganizationStructure extends Component {
+class EditOrgS extends Component {
     render() {
         return (
             <div>
@@ -31,12 +31,12 @@ class OrganizationStructure extends Component {
         <Form.Group className="mb-3">
             <Form.Label>Activity Coordinator</Form.Label>
             <InputGroup hasValidation>
-            <Form.Control
-              type="text"
-              placeholder="xxxx"
-              aria-describedby="inputGroupPrepend"
-              readonly="readonly"
-            />
+            <Form.Select aria-label="Default select example">
+                <option>--Select Event Committee Name--</option>
+                <option value="xxxx">xxxx</option>
+                <option value="yyyy">yyyy</option>
+                <option value="zzzz">zzzz</option>
+            </Form.Select>
             <Form.Control.Feedback type="invalid">
               Please enter a proper username.
             </Form.Control.Feedback>
@@ -46,12 +46,12 @@ class OrganizationStructure extends Component {
         <Form.Group className="mb-3">
             <Form.Label>Venue Coordinator</Form.Label>
             <InputGroup hasValidation>
-            <Form.Control
-              type="text"
-              placeholder="xxxx"
-              aria-describedby="inputGroupPrepend"
-              readonly="readonly"
-            />
+            <Form.Select aria-label="Default select example">
+                <option>--Select Event Committee Name--</option>
+                <option value="xxxx">xxxx</option>
+                <option value="yyyy">yyyy</option>
+                <option value="zzzz">zzzz</option>
+            </Form.Select>
             <Form.Control.Feedback type="invalid">
               Please enter a proper username.
             </Form.Control.Feedback>
@@ -61,12 +61,12 @@ class OrganizationStructure extends Component {
         <Form.Group className="mb-3">
             <Form.Label>Equipment Coordinator</Form.Label>
             <InputGroup hasValidation>
-            <Form.Control
-              type="text"
-              placeholder="xxxx"
-              aria-describedby="inputGroupPrepend"
-              readonly="readonly"
-            />
+            <Form.Select aria-label="Default select example">
+                <option>--Select Event Committee Name--</option>
+                <option value="xxxx">xxxx</option>
+                <option value="yyyy">yyyy</option>
+                <option value="zzzz">zzzz</option>
+            </Form.Select>
             <Form.Control.Feedback type="invalid">
               Please enter a proper username.
             </Form.Control.Feedback>
@@ -77,12 +77,12 @@ class OrganizationStructure extends Component {
             <Form.Group className="mb-3">
                 <Form.Label>Sound Equipment</Form.Label>
                 <InputGroup hasValidation>
-                <Form.Control
-                type="text"
-                placeholder="xxxx"
-                aria-describedby="inputGroupPrepend"
-                readonly="readonly"
-                />
+                <Form.Select aria-label="Default select example">
+                <option>--Select Event Committee Name--</option>
+                <option value="xxxx">xxxx</option>
+                <option value="yyyy">yyyy</option>
+                <option value="zzzz">zzzz</option>
+            </Form.Select>
                 <Form.Control.Feedback type="invalid">
                 Please enter a proper username.
                 </Form.Control.Feedback>
@@ -92,12 +92,12 @@ class OrganizationStructure extends Component {
             <Form.Group className="mb-3">
                 <Form.Label>Equipment Maintenance</Form.Label>
                 <InputGroup hasValidation>
-                <Form.Control
-                type="text"
-                placeholder="xxxx"
-                aria-describedby="inputGroupPrepend"
-                readonly="readonly"
-                />
+                <Form.Select aria-label="Default select example">
+                <option>--Select Event Committee Name--</option>
+                <option value="xxxx">xxxx</option>
+                <option value="yyyy">yyyy</option>
+                <option value="zzzz">zzzz</option>
+            </Form.Select>
                 <Form.Control.Feedback type="invalid">
                 Please enter a proper username.
                 </Form.Control.Feedback>
@@ -107,12 +107,12 @@ class OrganizationStructure extends Component {
             <Form.Group className="mb-3">
                 <Form.Label>Video Equipment</Form.Label>
                 <InputGroup hasValidation>
-                <Form.Control
-                type="text"
-                placeholder="xxxx"
-                aria-describedby="inputGroupPrepend"
-                readonly="readonly"
-                />
+                <Form.Select aria-label="Default select example">
+                <option>--Select Event Committee Name--</option>
+                <option value="xxxx">xxxx</option>
+                <option value="yyyy">yyyy</option>
+                <option value="zzzz">zzzz</option>
+            </Form.Select>
                 <Form.Control.Feedback type="invalid">
                 Please enter a proper username.
                 </Form.Control.Feedback>
@@ -124,12 +124,12 @@ class OrganizationStructure extends Component {
         <Form.Group className="mb-3">
             <Form.Label>Officials Coordinator</Form.Label>
             <InputGroup hasValidation>
-            <Form.Control
-              type="text"
-              placeholder="xxxx"
-              aria-describedby="inputGroupPrepend"
-              readonly="readonly"
-            />
+            <Form.Select aria-label="Default select example">
+                <option>--Select Event Committee Name--</option>
+                <option value="xxxx">xxxx</option>
+                <option value="yyyy">yyyy</option>
+                <option value="zzzz">zzzz</option>
+            </Form.Select>
             <Form.Control.Feedback type="invalid">
               Please enter a proper username.
             </Form.Control.Feedback>
@@ -139,12 +139,12 @@ class OrganizationStructure extends Component {
         <Form.Group className="mb-3">
             <Form.Label>Hospitality Coordinator</Form.Label>
             <InputGroup hasValidation>
-            <Form.Control
-              type="text"
-              placeholder="xxxx"
-              aria-describedby="inputGroupPrepend"
-              readonly="readonly"
-            />
+            <Form.Select aria-label="Default select example">
+                <option>--Select Event Committee Name--</option>
+                <option value="xxxx">xxxx</option>
+                <option value="yyyy">yyyy</option>
+                <option value="zzzz">zzzz</option>
+            </Form.Select>
             <Form.Control.Feedback type="invalid">
               Please enter a proper username.
             </Form.Control.Feedback>
@@ -154,12 +154,12 @@ class OrganizationStructure extends Component {
         <Form.Group className="mb-3">
             <Form.Label>Merchandising Coordinator</Form.Label>
             <InputGroup hasValidation>
-            <Form.Control
-              type="text"
-              placeholder="xxxx"
-              aria-describedby="inputGroupPrepend"
-              readonly="readonly"
-            />
+            <Form.Select aria-label="Default select example">
+                <option>--Select Event Committee Name--</option>
+                <option value="xxxx">xxxx</option>
+                <option value="yyyy">yyyy</option>
+                <option value="zzzz">zzzz</option>
+            </Form.Select>
             <Form.Control.Feedback type="invalid">
               Please enter a proper username.
             </Form.Control.Feedback>
@@ -167,8 +167,8 @@ class OrganizationStructure extends Component {
         </Form.Group>
         
         <p></p>
-        <Link to="editorgs"><Button variant="primary" type="submit">
-            Edit Details
+        <Link to="organizationstructure"><Button variant="primary" type="submit">
+            Update
         </Button></Link>
         </Form>
                 </div>
@@ -177,4 +177,4 @@ class OrganizationStructure extends Component {
     }
 }
 
-export default OrganizationStructure; 
+export default EditOrgS; 

@@ -127,14 +127,63 @@
 }
 
 
+/* .createpost {
+  background-color: #bbeae2;
+} */
 
 
+.try1 {
+  /* background-color: #285176; */
+  border-style: groove;
+  border-radius: 10px;
+  width: 60%;
+  padding: 20px;
+}
+
+.try2 {
+  /* background-color: #79c4e7; */
+  border-style: groove;
+  border-radius: 10px;
+  /* width: 40%; */
+  /* max-width: auto; */
+  padding: 20px;
+  /* margin-left: 20px; */
+}
+
+.try3 {
+  display: flex;
+  /* background-color: aquamarine; */
+}
 
 
+.try4 {
+  /* background-color: bisque; */
+  width: 40%;
+  max-width: auto;
+  margin-left: 20px;
+}
+
+.try13 {
+  /* background-color: #e8e5e5; */
+  padding: 20px;
+  border-style: groove;
+}
+
+.try7 {
+  /* background-color: #ccc; */
+  margin-left: 60px;
+}
 
 
-
-
+.dashboardbox {
+  display: flex;
+  justify-content: space-between;
+ align-items: end;
+  background: #ede6e6;
+  border-radius: 10px;
+  padding: 10px;
+  flex-grow: 1;
+}
 
 
 

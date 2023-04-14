@@ -5,7 +5,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import {Row, Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 
-class EventSummary extends Component {
+class EditDetails extends Component {
     render() {
         return (
             <div>
@@ -20,7 +20,7 @@ class EventSummary extends Component {
               type="text"
               placeholder="CS Bersamamu"
               aria-describedby="inputGroupPrepend"
-              readonly="readonly"
+             
             />
             <Form.Control.Feedback type="invalid">
               Please enter a proper username.
@@ -31,7 +31,9 @@ class EventSummary extends Component {
 
         <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Organization</Form.Label>
-            <Form.Control type="text" placeholder="CS Society" readonly="readonly"/>
+            <Form.Control type="text" 
+            placeholder="CS Society" 
+            />
             
         </Form.Group>
 
@@ -42,7 +44,7 @@ class EventSummary extends Component {
               type="text"
               placeholder="Family Day CS"
               aria-describedby="inputGroupPrepend"
-              readonly="readonly"
+            
             />
             <Form.Control.Feedback type="invalid">
               Please enter your details.
@@ -63,7 +65,7 @@ class EventSummary extends Component {
                         type="text"
                         placeholder="15/04/2023"
                         aria-describedby="inputGroupPrepend"
-                        readonly="readonly"
+                        
                         />
                         <Form.Control.Feedback type="invalid">
                         Please enter your date.
@@ -80,7 +82,7 @@ class EventSummary extends Component {
                         type="text"
                         placeholder="00:58 AM"
                         aria-describedby="inputGroupPrepend"
-                        readonly="readonly"
+                        
                         />
                         <Form.Control.Feedback type="invalid">
                         Please enter a proper time.
@@ -97,7 +99,7 @@ class EventSummary extends Component {
                         type="text"
                         placeholder="01:58 AM"
                         aria-describedby="inputGroupPrepend"
-                        readonly="readonly"
+                        
                         />
                         <Form.Control.Feedback type="invalid">
                         Please enter a proper time.
@@ -115,7 +117,7 @@ class EventSummary extends Component {
               type="text"
               placeholder="DKG31"
               aria-describedby="inputGroupPrepend"
-              readonly="readonly"
+              
             />
             <Form.Control.Feedback type="invalid">
               Please enter a proper venue.
@@ -132,7 +134,7 @@ class EventSummary extends Component {
               type="text"
               placeholder="https://1234567sdfg"
               aria-describedby="inputGroupPrepend"
-              readonly="readonly"
+              
             />
             <Form.Control.Feedback type="invalid">
               Please enter a proper link.
@@ -145,10 +147,10 @@ class EventSummary extends Component {
             <Form.Label>Poster</Form.Label>
             <InputGroup hasValidation>
             <Form.Control
-              type="text"
+              type="file"
               placeholder="Poster1_2023.jpg"
               aria-describedby="inputGroupPrepend"
-              readonly="readonly"
+              
             />
             <Form.Control.Feedback type="invalid">
               Please enter a proper file.
@@ -158,8 +160,8 @@ class EventSummary extends Component {
         </Form.Group>
 
         <p></p>
-        <Link to="editdetails"><Button variant="primary" type="submit">
-            Edit Details
+        <Link to="eventsummary"><Button variant="primary" type="submit">
+            Update
         </Button></Link>
         </Form>
                 </div>
@@ -168,4 +170,4 @@ class EventSummary extends Component {
     }
 }
 
-export default EventSummary; 
+export default EditDetails;
