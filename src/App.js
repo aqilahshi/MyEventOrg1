@@ -216,6 +216,7 @@ function App() {
           <Route path="/myevent/dashboard/generatefinalreport/finaldownload" element={<FinalDownload />} />
         
           <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/product" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/vendorregister" element={<VendorRegister />} />
           <Route path="/vendorlogin" element={<VendorLogin />} />
@@ -224,6 +225,7 @@ function App() {
           <Route path='/productlist' element={<ProductList />} />
           <Route path='/createpost' element={<CreatePost />} />
           <Route path='/createpost/productlist' element={<ProductList />} />
+          <Route path='/createpost/productlist/product' element={<Product />} />
           
           {/* delete */}
           {/* edit */}
