@@ -119,6 +119,8 @@ import Register from "./pages/Register";
 import { Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import Extractattendance from './pages/Extractattendance';
+import MainPage from './pages/MainPage';
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -156,6 +158,8 @@ function App() {
           <Route path="/myevent" element={<MyEvent />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/myevent/addevent" element={<AddEvent />} />
+
+          {/* start part nad */}
           <Route path="/attendance" element={<Attendance />} />
           <Route path="/award" element={<Award />} /> 
           <Route path="/winnerdetails" element={<Winner />} /> 
@@ -170,7 +174,8 @@ function App() {
           <Route path="/resultlivepoll" element={<ResultLv />} />
           <Route path="/playlivepoll" element={<PlayLv />} />
           <Route path="/luckydraw" element={<LuckyDrawAlgo />} />          
-
+          <Route path="/extractattendance" element={<Extractattendance />} />          
+          <Route path="/homepage" element={<MainPage />} />  
 
           {/* start kirah part */}
           <Route path="/myevent/dashboard" element={<Dashboard />} />
@@ -178,7 +183,7 @@ function App() {
           <Route path="/myevent/dashboard/organizationstructure" element={<OrganizationStructure />} />
           <Route path="/myevent/dashboard/eventagenda" element={<EventAgenda />} />
           <Route path="/myevent/dashboard/budgetplan" element={<BudgetPlan />} />
-          <Route path="/myevent/dashboard/attendance" element={<Attendance />} />
+          <Route path="/myevent/dashboard/extractattendance" element={<Extractattendance />} />
           <Route path="/myevent/dashboard/activity" element={<Activity />} />
           <Route path="/myevent/dashboard/award" element={<Award />} />
           <Route path="/myevent/dashboard/generatecertificate" element={<GenerateCertificate />} />
