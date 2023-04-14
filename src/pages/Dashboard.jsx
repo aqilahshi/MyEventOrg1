@@ -14,7 +14,7 @@ const Dashboard = () => {
                             <Dashboards label="b9.jpg" ><Link to='organizationstructure'>Organization Structure</Link></Dashboards>
                             <Dashboards label="b9.jpg" ><Link to='eventagenda'>Event Agenda</Link></Dashboards>
                             <Dashboards label="b9.jpg" ><Link to='budgetplan'>Budget Plan</Link></Dashboards>
-                            <Dashboards label="b9.jpg" ><Link to='attendance'>Participant</Link></Dashboards>
+                            <Dashboards label="b9.jpg" ><Link to='/extractattendance'>Participant</Link></Dashboards>
                             <Dashboards label="b9.jpg" ><Link to='activity'>Activity</Link></Dashboards>
                             <Dashboards label="b9.jpg" ><Link to='award'>Award & Prizes</Link></Dashboards>
                             <Dashboards label="b9.jpg" ><Link to='generatecertificate'>Certificate</Link></Dashboards>

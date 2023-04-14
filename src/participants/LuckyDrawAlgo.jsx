@@ -40,8 +40,8 @@ function LuckyDrawAlgo(){
 
     return(
         <div className='App'>
-            <button onClick={startRaffle}>
-                Start Raffle
+            <button onClick={startRaffle} style={{marginRight:'30px'}}>
+                Start 
             </button>
             <button onClick={() => setNames(shuffle(names))}>
                 Shuffle
@@ -54,7 +54,7 @@ function LuckyDrawAlgo(){
                     </div>
                 ))}
                 <div className="raffle-ends">
-                    <h3>Congratulations! You have won the raffle!</h3>
+                    <h3>Congratulations! You have won!</h3>
                     <button className="button-outline" onClick={restartRaffle}>
                     <img src={Replay} alt="heading logo" />
                     Replay

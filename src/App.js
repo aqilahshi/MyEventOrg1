@@ -3,7 +3,7 @@ import './App.css';
 import './style.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-import Calls from './pages/Todo.jsx';
+import Todolist from './pages/Todolist';
 import Comm from './pages/Comm.jsx';
 import Calendars from './pages/Calendars.jsx';
 import Files from './pages/Files.jsx';
@@ -129,6 +129,8 @@ import Register from "./pages/Register";
 import { Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import Extractattendance from './pages/Extractattendance';
+import MainPage from './pages/MainPage';
 
 function App() {
   const { currentUser } = useContext(AuthContext);
@@ -159,13 +161,15 @@ function App() {
         </Route>
         <Route path="/" element={<MyEvent />} />
           <Route path="/comm" element={<Comm />} />
-          <Route path="/calls" element={<Calls />} />
+          <Route path="/todolist" element={<Todolist/>} />
           <Route path="/calendars" element={<Calendars />} />
           <Route path="/files" element={<Files />} />
           <Route path="/applications" element={<Applications />} />
           <Route path="/myevent" element={<MyEvent />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/myevent/addevent" element={<AddEvent />} />
+
+          {/* start part nad */}
           <Route path="/attendance" element={<Attendance />} />
           <Route path="/award" element={<Award />} /> 
           <Route path="/winnerdetails" element={<Winner />} /> 
@@ -180,7 +184,8 @@ function App() {
           <Route path="/resultlivepoll" element={<ResultLv />} />
           <Route path="/playlivepoll" element={<PlayLv />} />
           <Route path="/luckydraw" element={<LuckyDrawAlgo />} />          
-
+          <Route path="/extractattendance" element={<Extractattendance />} />          
+          <Route path="/homepage" element={<MainPage />} />  
 
           {/* start kirah part */}
           <Route path="/myevent/dashboard" element={<Dashboard />} />
@@ -198,10 +203,14 @@ function App() {
           <Route path="/myevent/dashboard/eventagenda/editeventagenda/eventagenda" element={<EventAgenda />} />
           
           <Route path="/myevent/dashboard/budgetplan" element={<BudgetPlan />} />
+<<<<<<< HEAD
           <Route path="/myevent/dashboard/budgetplan/editBudgetplan" element={<EditBudgetPlan />} />
           <Route path="/myevent/dashboard/budgetplan/editBudgetplan/budgetplan" element={<BudgetPlan />} />
           
           <Route path="/myevent/dashboard/attendance" element={<Attendance />} />
+=======
+          <Route path="/myevent/dashboard/extractattendance" element={<Extractattendance />} />
+>>>>>>> main
           <Route path="/myevent/dashboard/activity" element={<Activity />} />
           <Route path="/myevent/dashboard/award" element={<Award />} />
           <Route path="/myevent/dashboard/generatecertificate" element={<GenerateCertificate />} />
