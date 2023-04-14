@@ -6,7 +6,7 @@ import {Row, Col} from 'react-bootstrap';
 import { useState, useEffect  } from "react";
 import {db} from '../firebase';
 import { collection, addDoc, getDocs  } from "firebase/firestore";
-
+import axios from 'axios';
     
 function  CreatePost() {
 
@@ -19,7 +19,7 @@ function  CreatePost() {
   const [productdesc, setProductDesc] = useState("")
   const [productprice, setProductPrice] = useState("")
   const [producttype, setProductType] = useState("")
-  const [productvar, setProductVar] = useState("")
+  // const [productvar, setProductVar] = useState("")
   const [productquantity, setProductQuantity] = useState("")
   
 
@@ -32,8 +32,12 @@ function  CreatePost() {
           productdesc: productdesc,
           productprice: productprice,
           producttype: producttype,
-          productvar: productvar,
-          productquantity: productquantity,    
+          // productvar: productvar,
+          productquantity: productquantity,
+          Status: Status,
+          Visibility: Visibility,
+          MStock: MStock,
+          SAvailability: SAvailability,     
         });
         console.log("Document written with ID: ", docRef.id);
       } catch (y) {
@@ -79,6 +83,49 @@ useEffect(()=>{
   }
 
 
+  
+
+  // ==================================================
+  const [currentFile, setFile] = React.useState();
+  const [previewImage, setPreview] = React.useState();
+  const [success, setSuccess] = React.useState(false);
+
+  const selectFile = function (e) {
+    setFile(e.target.files[0]);
+
+    let reader = new FileReader();
+    reader.onloadend = () => {
+      setPreview(reader.result);
+    };
+
+    reader.readAsDataURL(e.target.files[0]);
+  };
+
+  const submit2 = function () {
+    let fd = new FormData();
+
+    fd.append("file", currentFile);
+
+    let request = new XMLHttpRequest();
+
+    request.onreadystatechange = function (state) {
+      if (
+        state.originalTarget.readyState === 4 &&
+        state.originalTarget.status === 200
+      ) {
+        setSuccess(true);
+      }
+    };
+
+    request.open(
+      "POST",
+      "https://us-central1-tutorial-e6ea7.cloudfunctions.net/fileUpload",
+      true
+    );
+    request.send(fd);
+  };
+  // =================================================
+
   return (
     <div className='createpost'>
         <h1>Create A New Product</h1><br></br>
@@ -100,9 +147,9 @@ useEffect(()=>{
                     Please enter a product name.
                   </Form.Control.Feedback>
                 </InputGroup>
-                  <Form.Text className="text-muted">
+                  {/* <Form.Text className="text-muted">
                   Please insert a product name.
-                  </Form.Text>
+                  </Form.Text> */}
               </Form.Group>
 
               <Form.Group className="mb-3">
@@ -119,12 +166,12 @@ useEffect(()=>{
                     Please enter a product description.
                   </Form.Control.Feedback>
                 </InputGroup>
-                  <Form.Text className="text-muted">
+                  {/* <Form.Text className="text-muted">
                   Please insert a product description.
-                  </Form.Text>
+                  </Form.Text> */}
               </Form.Group>
 
-              <Form.Group className="mb-3">
+              {/* <Form.Group className="mb-3">
                   <Form.Label>Weight</Form.Label>
                   <InputGroup hasValidation>
                   <Form.Control
@@ -140,9 +187,9 @@ useEffect(()=>{
                   <Form.Text className="text-muted">
                   Please insert a product name.
                   </Form.Text>
-              </Form.Group>
+              </Form.Group> */}
 
-              <Form.Group className="mb-3">
+              {/* <Form.Group className="mb-3">
                   <Form.Label>Dimension</Form.Label>
                   <InputGroup hasValidation>
                   <Form.Control
@@ -158,14 +205,14 @@ useEffect(()=>{
                   <Form.Text className="text-muted">
                   Please insert a product name.
                   </Form.Text>
-              </Form.Group>
+              </Form.Group> */}
 
               <Form.Group className="mb-3">
                   <Form.Label>Price</Form.Label>
                   <InputGroup hasValidation>
                   <Form.Control
                     type="text"
-                    placeholder="Insert your product name"
+                    placeholder="Insert your product price"
                     aria-describedby="inputGroupPrepend"
                     onChange={(y)=>setProductPrice(y.target.value)}
                     required
@@ -174,29 +221,66 @@ useEffect(()=>{
                     Please enter a product name.
                   </Form.Control.Feedback>
                 </InputGroup>
-                  <Form.Text className="text-muted">
+                  {/* <Form.Text className="text-muted">
                   Please insert a product name.
-                  </Form.Text>
+                  </Form.Text> */}
               </Form.Group>
 
               
-
+              <div className='align-items-center'>
+                <Row>
+                  <Col>
               <Form.Group className="mb-3">
                   <Form.Label>Item Type</Form.Label>
                   <Form.Select aria-label="Default select example"
                   onChange={(y)=>setProductType(y.target.value)}>
                       <option>--Select Item Type--</option>
-                      <option value="F&B">F&B</option>
+                      <option value="Foods & Beverages">Foods & Beverages</option>
                       <option value="Doorgift">Doorgift</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
+                      <option value="Stationery">Stationery</option>
                   </Form.Select>
               </Form.Group>
+              </Col>
+              <Col>
+              <Form.Group className="mb-3 col-sm-">
+                          <Form.Label>Quantity</Form.Label>
+                            <InputGroup hasValidation>
+                            <Form.Control
+                              type="text"
+                              placeholder="Insert quantity"
+                              aria-describedby="inputGroupPrepend"
+                              onChange={(y)=>setProductQuantity(y.target.value)}
+                              required
+                            />
+                            <Form.Control.Feedback type="invalid">
+                              Please enter your quantity.
+                            </Form.Control.Feedback>
+                          </InputGroup>
+                            {/* <Form.Text className="text-muted">
+                            Please your quantity.
+                            </Form.Text> */}
+                          </Form.Group>
+                          </Col>
+                          </Row>
+</div>
+<div>
+      <br/><h5>Upload an image</h5>
+      <input type="file" accept="image/*" onChange={selectFile} />
 
+      {previewImage && !success && (
+        <div>
+          <img className="preview" src={previewImage} alt="" />
+        </div>
+      )}
+
+      {success && <div>Image successfully uploaded</div>}
+
+      <button onClick={submit2}>Upload</button>
+    </div>
               
-              <div className='align-items-center'>
-                  <Row>
-                      <Col>
+              {/* <div className='align-items-center'> */}
+                  {/* <Row> */}
+                      {/* <Col>
                           <Form.Group md="4" className="mb-3 " controlId="validationCustomUsername">
                           <Form.Label>Variations</Form.Label>
                             <InputGroup hasValidation>
@@ -215,9 +299,9 @@ useEffect(()=>{
                             Please your variations.
                             </Form.Text>
                           </Form.Group>
-                      </Col>
-                      <Col>
-                          <Form.Group className="mb-3 col-sm-">
+                      </Col> */}
+                      {/* <Col> */}
+                          {/* <Form.Group className="mb-3 col-sm-">
                           <Form.Label>Quantity</Form.Label>
                             <InputGroup hasValidation>
                             <Form.Control
@@ -234,10 +318,10 @@ useEffect(()=>{
                             <Form.Text className="text-muted">
                             Please your quantity.
                             </Form.Text>
-                          </Form.Group>
-                      </Col>
-                      <Col>
-                          <Form.Group className="mb-3">
+                          </Form.Group> */}
+                      {/* </Col>
+                      <Col> */}
+                          {/* <Form.Group className="mb-3">
                               <Form.Label>End Time</Form.Label>
                               <InputGroup hasValidation>
                               <Form.Control
@@ -253,16 +337,16 @@ useEffect(()=>{
                               <Form.Text className="text-muted">
                               Please insert a proper time.
                               </Form.Text>
-                          </Form.Group>
-                      </Col>
-                  </Row>
-                </div>
-                <p></p>
+                          </Form.Group> */}
+                      {/* </Col>
+                  </Row> */}
+                {/* </div> */}
+                {/* <p></p>
                 <Button variant="primary" 
                 type="submit" 
                 onClick={Submit}>
                     Submit
-                </Button>
+                </Button> */}
                 </Form>
             </div>
 
@@ -290,7 +374,7 @@ useEffect(()=>{
               Select status : <strong>{Status}</strong>
             </p> */}
 
-            <br/>
+            <p/>
              Visibility:
              <br/><input
               type="radio" name="Visibility"
@@ -337,7 +421,7 @@ useEffect(()=>{
             {/* <p>
               Select Manage Stock : <strong>{MStock}</strong>
             </p> */}
-            <br/>
+            <p/>
 
              Stock Availability:
              <br/><input
@@ -364,10 +448,16 @@ useEffect(()=>{
 
           <br/>
 
-          <div className='try2'>
+          <p></p>
+                <Button variant="primary" 
+                type="submit" 
+                onClick={Submit}>
+                    Submit
+                </Button>
+
+          {/* <div className='try2'>
               <h5>Attribute Group</h5>
               <Form.Group className="mb-3">
-                  {/* <Form.Label>Item Type</Form.Label> */}
                   <Form.Select aria-label="Default select example">
                       <option>--Select Attribute Group--</option>
                       <option value="1">F&B</option>
@@ -381,9 +471,9 @@ useEffect(()=>{
 
 
             <br/>
-             Stock Availability:
+             Stock Availability: 
             
-          </div>
+          </div>*/}
 
         </div>
 <div className="todo-content">

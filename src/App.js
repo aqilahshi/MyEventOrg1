@@ -44,6 +44,16 @@ import ValidateVendor from "./pages/ValidateVendor";
 import ApproveVendor from "./pages/ApproveVendor";
 import CreatePost from "./pages/CreatePost";
 import ViewFeed from "./pages/ViewFeed";
+import Aaaa from "./pages/Aaaa";
+import EditDetails from './pages/EditDetails.jsx';
+import EditOrgS from "./pages/EditOrgS";
+import EditEventAgenda from "./pages/EditEventAgenda";
+import EditBudgetPlan from "./pages/EditBudgetPlan";
+import FinalDownload from "./pages/FinalDownload";
+import AdminDashboard from "./pages/AdminDashboard";
+import AddAdmin from "./pages/AddAdmin";
+import RemoveVendor from "./pages/RemoveVendor";
+
 
 // const App = () => {
 //   return (
@@ -174,15 +184,31 @@ function App() {
 
           {/* start kirah part */}
           <Route path="/myevent/dashboard" element={<Dashboard />} />
+          
           <Route path="/myevent/dashboard/eventsummary" element={<EventSummary />} />
+          <Route path="/myevent/dashboard/eventsummary/editdetails" element={<EditDetails />} />
+          <Route path="/myevent/dashboard/eventsummary/editdetails/eventsummary" element={<EventSummary />} />
+          
           <Route path="/myevent/dashboard/organizationstructure" element={<OrganizationStructure />} />
+          <Route path="/myevent/dashboard/organizationstructure/editorgs" element={<EditOrgS />} />
+          <Route path="/myevent/dashboard/organizationstructure/editorgs/organizationstructure" element={<OrganizationStructure />} />
+          
           <Route path="/myevent/dashboard/eventagenda" element={<EventAgenda />} />
+          <Route path="/myevent/dashboard/eventagenda/editeventagenda" element={<EditEventAgenda />} />
+          <Route path="/myevent/dashboard/eventagenda/editeventagenda/eventagenda" element={<EventAgenda />} />
+          
           <Route path="/myevent/dashboard/budgetplan" element={<BudgetPlan />} />
+          <Route path="/myevent/dashboard/budgetplan/editBudgetplan" element={<EditBudgetPlan />} />
+          <Route path="/myevent/dashboard/budgetplan/editBudgetplan/budgetplan" element={<BudgetPlan />} />
+          
           <Route path="/myevent/dashboard/attendance" element={<Attendance />} />
           <Route path="/myevent/dashboard/activity" element={<Activity />} />
           <Route path="/myevent/dashboard/award" element={<Award />} />
           <Route path="/myevent/dashboard/generatecertificate" element={<GenerateCertificate />} />
+          
           <Route path="/myevent/dashboard/generatefinalreport" element={<FinalReport />} />
+          <Route path="/myevent/dashboard/generatefinalreport/finaldownload" element={<FinalDownload />} />
+        
           <Route path="/shop" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/vendorregister" element={<VendorRegister />} />
@@ -195,7 +221,12 @@ function App() {
           <Route path='/validatevendor' element={<ValidateVendor />} />
           <Route path='/validatevendor/approvevendor' element={<ApproveVendor />} />
           <Route path='/viewfeed' element={<ViewFeed />} />
-         
+          <Route path='/aaaa' element={<Aaaa />} />
+          <Route path='/admindashboard' element={<AdminDashboard />} />
+          <Route path='/admindashboard/addadmin' element={<AddAdmin />} />
+          <Route path='/admindashboard/validatevendor' element={<ValidateVendor />} />
+          <Route path='/admindashboard/removevendor' element={<RemoveVendor />} />
+          
           {/* categories?? */}
           {/* admin dashboard */}
           {/* end kirah part */}

@@ -9,8 +9,7 @@ const ViewFeed = () => {
   
  
     const fetchPost = async () => {
-        // await getDocs(collection(db, "product"))
-        await getDocs(collection(db, "todos"))
+        await getDocs(collection(db, "addevents"))
             .then((querySnapshot)=>{              
                 const newData = querySnapshot.docs
                     .map((doc) => ({...doc.data(), id:doc.id }));
@@ -36,9 +35,11 @@ const ViewFeed = () => {
    
                 <div className="todo-content">
                     {
-                        todos?.map((todo,i)=>(
+                        todos?.map((name,organization,i)=>(
                             <p key={i}>
-                                {todo.todo}
+                                {name.name},
+                                {organization.organization}
+                                <br/><br/>
                             </p>
                         ))
                     }

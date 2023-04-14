@@ -1,73 +1,57 @@
-// import React, { Component } from "react";
-
-// class Aaaa extends Component {
-//   constructor() {
-//     super();
-//     this.state = {
-//       name: "React"
-//     };
-//     this.onValueChange = this.onValueChange.bind(this);
-//     this.formSubmit = this.formSubmit.bind(this);
-//   }
-
-//   onValueChange(event) {
-//     this.setState({
-//       selectedOption: event.target.value
-//     });
-//   }
-
-//   formSubmit(event) {
-//     event.preventDefault();
-//     console.log(this.state.selectedOption)
-//   }
-
-//   render() {
-//     return (
-//       <form onSubmit={this.formSubmit}>
-//         <div className="radio">
-//           <label>
-//             <input
-//               type="radio"
-//               value="Male"
-//               checked={this.state.selectedOption === "Male"}
-//               onChange={this.onValueChange}
-//             />
-//             Male
-//           </label>
-//         </div>
-//         <div className="radio">
-//           <label>
-//             <input
-//               type="radio"
-//               value="Female"
-//               checked={this.state.selectedOption === "Female"}
-//               onChange={this.onValueChange}
-//             />
-//             Female
-//           </label>
-//         </div>
-//         <div className="radio">
-//           <label>
-//             <input
-//               type="radio"
-//               value="Other"
-//               checked={this.state.selectedOption === "Other"}
-//               onChange={this.onValueChange}
-//             />
-//             Other
-//           </label>
-//         </div>
-//         <div>
-//           Selected option is : {this.state.selectedOption}
-//         </div>
-//         <button className="btn btn-default" type="submit">
-//           Submit
-//         </button>
-//       </form>
-//     );
-//   }
-// }
-
-// export default Aaaa;
-
-
+import { useState } from "react";
+import { storage } from "../firebase";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+ 
+function Aaaa() {
+    // State to store uploaded file
+    const [file, setFile] = useState("");
+ 
+    // progress
+    const [percent, setPercent] = useState(0);
+ 
+    // Handle file upload event and update state
+    function handleChange(event) {
+        setFile(event.target.files[0]);
+    }
+ 
+    const handleUpload = () => {
+        if (!file) {
+            alert("Please upload an image first!");
+        }
+ 
+        const storageRef = ref(storage, `/files/${file.name}`);
+ 
+        // progress can be paused and resumed. It also exposes progress updates.
+        // Receives the storage reference and the file to upload.
+        const uploadTask = uploadBytesResumable(storageRef, file);
+ 
+        uploadTask.on(
+            "state_changed",
+            (snapshot) => {
+                const percent = Math.round(
+                    (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                );
+ 
+                // update progress
+                setPercent(percent);
+            },
+            (err) => console.log(err),
+            () => {
+                // download url
+                getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+                    console.log(url);
+                });
+            }
+        );
+    };
+ 
+    return (
+        <div>
+            <input type="file" onChange={handleChange} accept="/image/*" />
+            <button onClick={handleUpload}>Upload to Firebase</button>
+            <p>{percent} "% done"</p>
+        </div>
+    );
+}
+ 
+export default Aaaa;

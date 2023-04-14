@@ -136,7 +136,7 @@
   /* background-color: #285176; */
   border-style: groove;
   border-radius: 10px;
-  max-width: 60%;
+  width: 60%;
   padding: 20px;
 }
 
@@ -152,6 +152,7 @@
 
 .try3 {
   display: flex;
+  /* background-color: aquamarine; */
 }
 
 
@@ -162,10 +163,27 @@
   margin-left: 20px;
 }
 
+.try13 {
+  /* background-color: #e8e5e5; */
+  padding: 20px;
+  border-style: groove;
+}
+
+.try7 {
+  /* background-color: #ccc; */
+  margin-left: 60px;
+}
 
 
-
-
+.dashboardbox {
+  display: flex;
+  justify-content: space-between;
+ align-items: end;
+  background: #ede6e6;
+  border-radius: 10px;
+  padding: 10px;
+  flex-grow: 1;
+}
 
 
 
