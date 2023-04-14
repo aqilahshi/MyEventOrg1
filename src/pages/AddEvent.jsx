@@ -1,10 +1,43 @@
-import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import {Row, Col} from 'react-bootstrap';
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import {db} from '../firebase';
+import React, { useState, useEffect } from 'react';
+// import { storage } from "./firebaseConfig";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { setDate } from 'date-fns';
 
 function AddEvent() {
+  const [name, setName] = useState("");
+  const [organization, setOrganization] = useState("");
+  const [details, setDetails] = useState("");
+  const [date, setDate] = useState("");
+  const [start, setStart] = useState("");
+  const [end, setEnd] = useState("");
+  const [venue, setVenue] = useState("");
+  const [registrationLink, setRegistration] = useState("");
+
+  const createEvent = async (e) =>{
+    e.preventDefault();
+    try {
+      const docRef = await addDoc(collection(db, "addevents"), {
+        name: name, 
+        organization: organization,
+        details: details,
+        date: date,
+        start: start,
+        end: end,
+        venue: venue,
+        registrationLink: registrationLink,   
+      });
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  }
+
   return (
     <div className='addevent'>
         <Form>
@@ -15,20 +48,22 @@ function AddEvent() {
               type="text"
               placeholder="Insert your name"
               aria-describedby="inputGroupPrepend"
+              onChange={(e)=>setName(e.target.value)}
               required
             />
             <Form.Control.Feedback type="invalid">
-              Please enter a proper username.
+              Please enter a proper name.
             </Form.Control.Feedback>
           </InputGroup>
             <Form.Text className="text-muted">
-            Please insert a proper username.
+            Please insert a proper name.
             </Form.Text>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3">
             <Form.Label>Organization</Form.Label>
-            <Form.Control type="email" placeholder="Enter organization" />
+            <Form.Control type="text" placeholder="Enter organization" 
+            onChange={(e)=>setOrganization(e.target.value)}/>
             <Form.Text className="text-muted">
             Please insert a proper organization.
             </Form.Text>
@@ -41,6 +76,7 @@ function AddEvent() {
               type="text"
               placeholder="Insert details"
               aria-describedby="inputGroupPrepend"
+              onChange={(e)=>setDetails(e.target.value)}
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -48,11 +84,9 @@ function AddEvent() {
             </Form.Control.Feedback>
           </InputGroup>
             <Form.Text className="text-muted">
-            Please your details.
+              Please your details.
             </Form.Text>
         </Form.Group>
-
-        {/* Phone number form */}
         
         <div className='align-items-center'>
             <Row>
@@ -64,6 +98,7 @@ function AddEvent() {
                         type="date"
                         placeholder="Insert date"
                         aria-describedby="inputGroupPrepend"
+                        onChange={(e)=>setDate(e.target.value)}
                         required
                         />
                         <Form.Control.Feedback type="invalid">
@@ -83,6 +118,7 @@ function AddEvent() {
                         type="time"
                         placeholder="Insert your start time"
                         aria-describedby="inputGroupPrepend"
+                        onChange={(e)=>setStart(e.target.value)}
                         required
                         />
                         <Form.Control.Feedback type="invalid">
@@ -102,6 +138,7 @@ function AddEvent() {
                         type="time"
                         placeholder="Insert your end time"
                         aria-describedby="inputGroupPrepend"
+                        onChange={(e)=>setEnd(e.target.value)}
                         required
                         />
                         <Form.Control.Feedback type="invalid">
@@ -122,6 +159,7 @@ function AddEvent() {
               type="text"
               placeholder="Insert your venue"
               aria-describedby="inputGroupPrepend"
+              onChange={(e)=>setVenue(e.target.value)}
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -167,6 +205,7 @@ function AddEvent() {
               type="text"
               placeholder="Insert your link"
               aria-describedby="inputGroupPrepend"
+              onChange={(e)=>setRegistration(e.target.value)}
               required
             />
             <Form.Control.Feedback type="invalid">
@@ -178,7 +217,7 @@ function AddEvent() {
             </Form.Text>
         </Form.Group>
 
-        <Form.Group className="mb-3">
+        {/* <Form.Group className="mb-3">
             <Form.Label>Add Poster</Form.Label>
             <InputGroup hasValidation>
             <Form.Control
@@ -194,10 +233,10 @@ function AddEvent() {
             <Form.Text className="text-muted">
             Please insert a proper file.
             </Form.Text>
-        </Form.Group>
+        </Form.Group> */}
 
         <p></p>
-        <Button variant="primary" type="submit">
+        <Button variant="primary" type="submit" onClick={createEvent}>
             Submit
         </Button>
         </Form>

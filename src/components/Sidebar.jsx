@@ -48,7 +48,7 @@ const Sidebar = ({children}) => {
         //     icon:<FaTh/>
         // },
         {
-            path:"/todo",
+            path:"/todolist",
             name:"To-do List",
             icon:<FaPhoneAlt/>
         },
