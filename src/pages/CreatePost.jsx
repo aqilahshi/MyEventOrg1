@@ -6,7 +6,7 @@ import {Row, Col} from 'react-bootstrap';
 import { useState, useEffect  } from "react";
 import {db} from '../firebase';
 import { collection, addDoc, getDocs  } from "firebase/firestore";
-import axios from 'axios';
+import {Link} from 'react-router-dom';
     
 function  CreatePost() {
 
@@ -449,11 +449,11 @@ useEffect(()=>{
           <br/>
 
           <p></p>
-                <Button variant="primary" 
+                <Link to="productlist"><Button variant="primary" 
                 type="submit" 
                 onClick={Submit}>
                     Submit
-                </Button>
+                </Button></Link>
 
           {/* <div className='try2'>
               <h5>Attribute Group</h5>

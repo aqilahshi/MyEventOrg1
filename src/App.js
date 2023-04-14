@@ -223,8 +223,11 @@ function App() {
           <Route path="/vendorregister" element={<VendorRegister />} />
           <Route path="/vendorlogin" element={<VendorLogin />} />
           <Route path='/product' element={<Product />} />
+          <Route path='/productlist/product' element={<Product />} />
           <Route path='/productlist' element={<ProductList />} />
           <Route path='/createpost' element={<CreatePost />} />
+          <Route path='/createpost/productlist' element={<ProductList />} />
+          
           {/* delete */}
           {/* edit */}
           <Route path='/validatevendor' element={<ValidateVendor />} />
