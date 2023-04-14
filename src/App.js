@@ -3,7 +3,7 @@ import './App.css';
 import './style.scss';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-import Calls from './pages/Todo.jsx';
+import Todolist from './pages/Todolist';
 import Comm from './pages/Comm.jsx';
 import Calendars from './pages/Calendars.jsx';
 import Files from './pages/Files.jsx';
@@ -149,7 +149,7 @@ function App() {
         </Route>
         <Route path="/" element={<MyEvent />} />
           <Route path="/comm" element={<Comm />} />
-          <Route path="/calls" element={<Calls />} />
+          <Route path="/todolist" element={<Todolist/>} />
           <Route path="/calendars" element={<Calendars />} />
           <Route path="/files" element={<Files />} />
           <Route path="/applications" element={<Applications />} />
